@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Albert Sans', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    overflow-x: hidden;
+  }
+
+  /* Custom light scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F1F5F9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+    border: 1px solid rgba(184, 151, 88, 0.3);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B89758;
+  }
+}
+
+/* Glassmorphism effects for Light Mode */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+}
+
+.glass-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: #B89758;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1), 0 0 20px rgba(184, 151, 88, 0.15);
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #0F172A 0%, #B89758 60%, #8F7138 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Marquee continuous scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Luxury button */
+.btn-gold {
+  background: linear-gradient(135deg, #DFBA73 0%, #B89758 50%, #8F7138 100%);
+  color: #0F172A;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 8px 25px rgba(184, 151, 88, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-navy {
+  background: #0F172A;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.btn-navy:hover {
+  background: #1E293B;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Keep every interior page aligned with the homepage's light navy-and-gold palette. */
+.premium-inner-page {
+  color: #0F172A;
+  background-color: #F8FAFC;
+}
+
+.premium-inner-page section {
+  color: #0F172A;
+  background-color: #F8FAFC !important;
+}
+
+.premium-inner-page > div > section:first-of-type {
+  min-height: clamp(24rem, 34vw, 31rem);
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(90deg, rgba(5, 11, 22, 0.76) 0%, rgba(5, 11, 22, 0.56) 52%, rgba(5, 11, 22, 0.28) 100%),
+    var(--page-banner-image) !important;
+  background-size: cover, cover;
+  background-position: center, var(--page-banner-position, center);
+  background-repeat: no-repeat;
+}
+
+.premium-inner-page > div > section:first-of-type > .absolute {
+  display: none;
+}
+
+.premium-inner-page > div > section:first-of-type > .max-w-7xl {
+  width: 100%;
+}
+
+.premium-inner-page > div > section:first-of-type h1,
+.premium-inner-page > div > section:first-of-type p {
+  color: #FFFFFF !important;
+}
+
+.premium-inner-page > div > section:first-of-type h1 {
+  max-width: 56rem;
+  font-size: clamp(2.25rem, 4.65vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.premium-inner-page > div > section:first-of-type p {
+  max-width: 48rem;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.premium-inner-page [class*="bg-brand-navy"],
+.premium-inner-page [class*="bg-[#060912]"],
+.premium-inner-page [class*="bg-[#090D16]"],
+.premium-inner-page [class*="bg-[#0F172A]"],
+.premium-inner-page [class~="bg-slate-900"] {
+  background-color: #FFFFFF !important;
+}
+
+.premium-inner-page [class*="bg-white/5"],
+.premium-inner-page [class*="bg-white/10"] {
+  background-color: #F8FAFC !important;
+}
+
+.premium-inner-page [class*="border-white/"] {
+  border-color: #E2E8F0 !important;
+}
+
+.premium-inner-page [class~="text-white"],
+.premium-inner-page [class~="text-slate-100"],
+.premium-inner-page [class~="text-slate-200"],
+.premium-inner-page [class~="text-slate-300"],
+.premium-inner-page [class~="text-slate-400"] {
+  color: #334155 !important;
+}
+
+.premium-inner-page > div > section:first-of-type [class~="text-white"],
+.premium-inner-page .btn-navy,
+.premium-inner-page .btn-navy *,
+.premium-inner-page .btn-gold,
+.premium-inner-page .btn-gold * {
+  color: #FFFFFF !important;
+}
+
+.premium-inner-page .btn-gold,
+.premium-inner-page .btn-gold * {
+  color: #0F172A !important;
+}
+
+.premium-inner-page .glass-card {
+  background-color: #FFFFFF;
+}
+
+@media (max-width: 639px) {
+  .premium-inner-page > div > section:first-of-type {
+    min-height: 24rem;
+    background-image:
+      linear-gradient(90deg, rgba(5, 11, 22, 0.76) 0%, rgba(5, 11, 22, 0.57) 62%, rgba(5, 11, 22, 0.42) 100%),
+      var(--page-banner-image) !important;
+    background-size: cover, cover;
+    background-position: center, var(--page-banner-position, center);
+  }
+
+  .premium-inner-page > div > section:first-of-type h1 {
+    max-width: 25rem;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .premium-inner-page > div > section:first-of-type p {
+    font-size: 1rem;
+  }
+}
