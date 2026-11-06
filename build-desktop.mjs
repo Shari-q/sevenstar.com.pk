@@ -20,6 +20,9 @@ await build({
   platform: 'browser',
   target: 'es2020',
   minify: true,
+  define: {
+    'import.meta.env.BASE_URL': '"/"',
+  },
   loader: {
     '.css': 'empty',
     '.png': 'dataurl',

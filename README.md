@@ -25,6 +25,10 @@ npm run build
 npm run dev
 ```
 
+## Deploy to GitHub Pages
+
+The GitHub Actions workflow builds and publishes the `dist` directory whenever changes are pushed to `main`. In the repository's **Settings → Pages**, set the build and deployment source to **GitHub Actions**. The production build uses the repository's `/sevenstar.com.pk/` path and hash-based routes so pages work when hosted under that project URL.
+
 ---
 
 ## All 18 Pages Included
